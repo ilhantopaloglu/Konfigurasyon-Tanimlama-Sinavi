@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Konfigürasyon Tanımlama Soru-Cevap</title>
+
+<style>
+
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 30px auto; line-height: 1.6; }
+
+    #quiz { display: none; }
+
+    .question { margin-top: 20px; font-weight: bold; }
+
+    .options label { display: block; margin-left: 10px; cursor: pointer; }
+
+    #result { margin-top: 30px; font-size: 20px; font-weight: bold; color: #444; }
+
+    button { padding: 10px 20px; margin-top: 20px; cursor: pointer; }
+
+</style>
+
+</head>
+
+<body>
+
+
+<h2>KONFİGÜRASYON TANIMLAMA</h2>
+
+
+<div id="textContent">
+
+<p>
+Konfigürasyon Yönetimi (KY) ana faaliyetleri arasında sürecin teknik çerçevesini ve temelini oluşturan "Konfigürasyon Tanımlama" adımının ne olduğunu ve bu aşamada kimlerin hangi görevleri üstlendiğini kısaca anlatmaya çalışacağım...
+<p>
+* Sistem Mühendisi (SM) <br>
+* Donanım/Yazılım Tasarım Sorumlusu (TS) <br>
+* Konfigürasyon Yönetimi Sorumlusu (KYS) <br>
+
+<p>
+Bir ürünün konfigürasyonunu oluşturmanın ilk somut adımı, SM'nin müşteri isterlerini hangi konfigürasyon birimlerine (KB) tahsis edeceğini belirlemesiyle başlar. Ardından, yine SM liderliğinde ve TS katkılarıyla bu birimlerin birbirleriyle olan arayüzleri netleştirilir.
+</p>
+<p>
+Bu aşamadan sonra tanımlanan her KB’nin kimliklendirilmesi ve numaralandırılması, ürün yapısının oluşturulması ve tüm resmi kayıtların tutulması KYS görevidir. TS teknik içerikleri sağlar, SM ise bütünlüğü doğrular.
+</p>
+<p>
+Ürünün hiyerarşik yapısı SM tarafından oluşturulurken, bunun kimliklendirme kurallarına ve anahat yapısına uygunluğu KYS tarafından güvence altına alınır. Benzer şekilde, ürünün yaşam döngüsü boyunca olgunluk seviyeleri (yani anahatlar) KYS tarafından tanımlanır. Bu geçiş kriterleri ise SM tarafından netleştirilir.
+</p>
+<p>
+Her bir anahatta hazırlanacak veri paketleri KYS tarafından belirlenir. İçeriklerin hazırlanması TS tarafından yapılır ve SM teknik kapsamı gözden geçirir. Sürecin sonunda oluşturulan ürün ağaçları ve veri paketleri; TS teknik onayı, SM kapsam onayı ve KYS'nin resmi yayımlaması ile geçerlilik kazanır.
+</p>
+<p>
+Bu bütünsel süreç, ancak teknik ekiplerin KYS uyumlu çalışması sayesinde sağlıklı biçimde yürütülebilir.
+</p>
+
+<button onclick="startQuiz()">Devam Et • Teste Başla</button>
+
+</div>
+
+<!-- QUIZ -->
+
+<div id="quiz"></div>
+
+<div id="result"></div>
+
+<script>
+
+// 10 soruluk test
+
+const questions = [
+
+    {
+
+        q: "Konfigürasyon Tanımlama sürecinin ilk adımını kim gerçekleştirir?",
+
+        options: ["Tasarım Sorumlusu", "Konfigürasyon Yönetimi Sorumlusu", "Sistem Mühendisi", "Proje Yöneticisi", "Müşteri"],
+
+        correct: 2
+
+    },
+
+    {
+
+        q: "Konfigürasyon Birimlerinin arayüzlerini kim netleştirir?",
+
+        options: ["Konfigürasyon Yönetimi Sorumlusu", "Sistem Mühendisi ve Tasarım Sorumlusu", "Sistem Mühendisi ve Müşteri", "Tasarım Sorumlusu tek başına", "Kalite Ekibi"],
+
+        correct: 1
+
+    },
+
+    {
+
+        q: "Kimliklendirme ve numaralandırma sorumluluğu kimdedir?",
+
+        options: ["Sistem Mühendisi", "Tasarım Sorumlusu", "Konfigürasyon Yönetimi Sorumlusu", "Prototip Ekibi", "Satış Departmanı"],
+
+        correct: 2
+
+    },
+
+    {
+
+        q: "Teknik içeriklerin hazırlanması kimin görevidir?",
+
+        options: ["Konfigürasyon Yönetimi Sorumlusu", "Sistem Mühendisi", "Tasarım Sorumlusu", "Proje Yöneticisi", "Satınalma"],
+
+        correct: 2
+
+    },
+
+    {
+
+        q: "Ürünün hiyerarşik yapısını kim oluşturur?",
+
+        options: ["Konfigürasyon Yönetimi Sorumlusu", "Tasarım Sorumlusu", "Müşteri", "Sistem Mühendisi", "Test Ekibi"],
+
+        correct: 3
+
+    },
+
+    {
+
+        q: "Kimliklendirme kurallarına uygunluğu kim kontrol eder?",
+
+        options: ["Tasarım Sorumlusu", "Sistem Mühendisi", "Konfigürasyon Yönetimi Sorumlusu", "Proje Yönetimi", "Müşteri"],
+
+        correct: 2
+
+    },
+
+    {
+
+        q: "Anahat seviyelerini kim tanımlar?",
+
+        options: ["Konfigürasyon Yönetimi Sorumlusu", "Sistem Mühendisi", "Kalite Ekibi", "Tasarım Sorumlusu", "Satınalma"],
+
+        correct: 0
+
+    },
+
+    {
+
+        q: "Anahatlar arası geçiş kriterlerini kim netleştirir?",
+
+        options: ["Konfigürasyon Yönetimi Sorumlusu", "Test Ekibi", "Tasarım Sorumlusu", "Sistem Mühendisi", "Müşteri"],
+
+        correct: 3
+
+    },
+
+    {
+
+        q: "Veri paketlerinin içeriğini kim hazırlar?",
+
+        options: ["Sistem Mühendisi", "Konfigürasyon Yönetimi Sorumlusu", "Tasarım Sorumlusu", "Müşteri", "Kalite"],
+
+        correct: 2
+
+    },
+
+    {
+
+        q: "Veri paketleri resmi olarak kim tarafından yayımlanır?",
+
+        options: ["Sistem Mühendisi", "Tasarım Sorumlusu", "Konfigürasyon Yönetimi Sorumlusu", "Üretim Ekibi", "Satış Ekibi"],
+
+        correct: 2
+
+    }
+
+];
+
+
+
+function startQuiz() {
+
+    document.getElementById("textContent").style.display = "none";
+
+    const quizDiv = document.getElementById("quiz");
+
+    quizDiv.style.display = "block";
+
+    let html = "<h2>Test</h2>";
+
+    questions.forEach((item, index) => {
+
+        html += `<div class='question'>${index + 1}. ${item.q}</div>`;
+
+        html += "<div class='options'>";
+
+        item.options.forEach((opt, i) => {
+
+            html += `
+
+                <label>
+
+                    <input type="radio" name="q${index}" value="${i}"> ${opt}
+
+                </label>
+
+            `;
+
+        });
+
+        html += "</div>";
+
+    });
+
+
+    html += `<button onclick="finishQuiz()">Bitir</button>`;
+
+    quizDiv.innerHTML = html;
+
+}
+
+
+function finishQuiz() {
+
+    let score = 0;
+
+
+    questions.forEach((item, index) => {
+
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+
+        if (selected && parseInt(selected.value) === item.correct) {
+
+            score++;
+
+        }
+
+    });
+
+
+
+    const total = questions.length;
+
+    const wrong = total - score;
+
+    const percent = Math.round((score / total) * 100);
+
+
+    document.getElementById("result").innerHTML =
+
+        `Doğru: ${score} • Yanlış: ${wrong} • Başarı: %${percent}`;
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
