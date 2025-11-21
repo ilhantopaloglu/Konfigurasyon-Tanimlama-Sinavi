@@ -1,2 +1,2 @@
-# Konfigurasyon-Tanimlama-Sinavi
-KY Tanimlama Soru-Cevap
+# KY-Tanimlama
+Konfigurasyon Yonetimi Tanimlama Soru-Cevap
