@@ -197,43 +197,6 @@
     for (let i = 1; i <= total; i++) {
       const radios = document.getElementsByName("q" + i);
       for (const r of radios) {
-
-<script>
-  document.getElementById("startBtn").addEventListener("click", function() {
-    document.getElementById("textSection").style.display = "none";
-    document.getElementById("testSection").style.display = "block";
-  });
-
-  document.getElementById("finishBtn").addEventListener("click", function() {
-    let correct = 0;
-    const total = 10;
-
-    for (let i = 1; i <= total; i++) {
-      const radios = document.getElementsByName("q" + i);
-
-      for (const r of radios) {
-
-        // --- EK: DOĞRU ŞIKLARI YEŞİLE BOYA ---
-        if (r.value === "c") {
-          r.parentNode.style.color = "green";
-          r.parentNode.style.fontWeight = "bold";
-        }
-        // --------------------------------------
-
-        if (r.checked && r.value === "c") correct++;
-      }
-    }
-
-    const wrong = total - correct;
-    const percent = Math.round((correct / total) * 100);
-
-    document.getElementById("result").innerHTML =
-      "Doğru: " + correct + "<br>" +
-      "Yanlış: " + wrong + "<br>" +
-      "Başarı: %" + percent;
-  });
-</script>
-  
         
         if (r.checked && r.value === "c") correct++;
       }
@@ -251,4 +214,5 @@
 
 </body>
 </html>
+
 
