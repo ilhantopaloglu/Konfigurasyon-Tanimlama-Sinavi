@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Konfigürasyon Tanımlama Testi</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 30px auto;
+    line-height: 1.6;
+  }
+  #startBtn, #finishBtn {
+    display: block;
+    width: 100%;
+    font-size: 22px;
+    padding: 15px;
+    margin: 30px 0;
+    cursor: pointer;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  #testSection {
+    display: none;
+  }
+  #result {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: darkblue;
+  }
+</style>
+</head>
+<body>
+
+<div id="textSection">
+  <h2>Konfigürasyon Tanımlama</h2>
+  <p>
+    Konfigürasyon Yönetimi (KY) ana faaliyetleri arasında sürecin teknik çerçevesini ve temelini oluşturan 
+    "Konfigürasyon Tanımlama" adımının ne olduğunu ve bu aşamada kimlerin hangi görevleri üstlendiğini kısaca 
+    anlatmaya çalışacağım...
+  </p>
+
+  <ul>
+    <li>Sistem Mühendisi (SM)</li>
+    <li>Donanım/Yazılım Tasarım Sorumlusu (TS)</li>
+    <li>Konfigürasyon Yönetimi Sorumlusu (KYS)</li>
+  </ul>
+
+  <p>
+    Bir ürünün konfigürasyonunu oluşturmanın ilk somut adımı, Sistem Mühendisinin müşteri isterlerini hangi 
+    konfigürasyon birimlerine (KB) tahsis edeceğini belirlemesiyle başlar. Ardından, yine Sistem Mühendisi 
+    liderliğinde ve Tasarım Sorumlusunun katkılarıyla bu birimlerin birbirleriyle olan arayüzleri netleştirilir.
+  </p>
+
+  <p>
+    Bu aşamadan sonra tanımlanan her KB’nin kimliklendirilmesi ve numaralandırılması, ürün yapısının 
+    oluşturulması ve tüm resmi kayıtların tutulması Konfigürasyon Yönetimi Sorumlusunun görevidir. Tasarım 
+    Sorumlusu teknik içerikleri sağlar, Sistem Mühendisi ise bütünlüğü doğrular.
+  </p>
+
+  <p>
+    Ürünün hiyerarşik yapısı Sistem Mühendisi tarafından oluşturulurken, bunun kimliklendirme kurallarına ve 
+    anahat yapısına uygunluğu Konfigürasyon Yönetimi Sorumlusu tarafından güvence altına alınır. Benzer şekilde, 
+    ürünün yaşam döngüsü boyunca olgunluk seviyeleri (yani anahatlar) Konfigürasyon Yönetimi Sorumlusu tarafından 
+    tanımlanır. Bu geçiş kriterleri ise Sistem Mühendisi tarafından netleştirilir.
+  </p>
+
+  <p>
+    Her bir anahatta hazırlanacak veri paketleri Konfigürasyon Yönetimi Sorumlusu tarafından belirlenir. 
+    İçeriklerin hazırlanması Tasarım Sorumlusu tarafından yapılır ve Sistem Mühendisi teknik kapsamı gözden 
+    geçirir. Sürecin sonunda oluşturulan ürün ağaçları ve veri paketleri; Tasarım Sorumlusunun teknik onayı, 
+    Sistem Mühendisinin kapsam onayı ve Konfigürasyon Yönetimi Sorumlusunun resmi yayımlaması ile geçerlilik 
+    kazanır.
+  </p>
+
+  <p>
+    Bu bütünsel süreç, ancak teknik ekiplerin Konfigürasyon Yönetimi ile uyumlu çalışması sayesinde sağlıklı 
+    biçimde yürütülebilir.
+  </p>
+
+  <button id="startBtn">Teste Başla</button>
+</div>
+
+
+<!-- TEST BÖLÜMÜ -->
+<form id="testSection">
+  <h2>Konfigürasyon Tanımlama – Test</h2>
+
+  <div class="question">
+    1) Müşteri isterlerini konfigürasyon birimlerine ilk tahsis eden kimdir?<br>
+    <input type="radio" name="q1" value="c"> Sistem Mühendisi<br>
+    <input type="radio" name="q1" value="w"> Tasarım Sorumlusu<br>
+    <input type="radio" name="q1" value="w"> Konfigürasyon Yönetimi Sorumlusu<br>
+    <input type="radio" name="q1" value="w"> Sistem Mühendisi ve Tasarım Sorumlusu<br>
+    <input type="radio" name="q1" value="w"> Sistem Mühendisi ve Konfigürasyon Yönetimi Sorumlusu<br>
+  </div>
+
+  <div class="question">
+    2) Konfigürasyon birimlerinin arayüzlerini kimler netleştirir?<br>
+    <input type="radio" name="q2" value="w"> Sistem Mühendisi<br>
+    <input type="radio" name="q2" value="w"> Sistem Mühendisi ve Konfigürasyon Yönetimi Sorumlusu<br>
+    <input type="radio" name="q2" value="c"> Sistem Mühendisi ve Tasarım Sorumlusu<br>
+    <input type="radio" name="q2" value="w"> Konfigürasyon Yönetimi Sorumlusu<br>
+    <input type="radio" name="q2" value="w"> Tasarım Sorumlusu<br>
+  </div>
+
+  <div class="question">
+    3) Kimliklendirme ve numaralandırma kimin sorumluluğundadır?<br>
+    <input type="radio" name="q3" value="w"> Sistem Mühendisi<br>
+    <input type="radio" name="q3" value="c"> Konfigürasyon Yönetimi Sorumlusu<br>
+    <input type="radio" name="q3" value="w"> Tasarım Sorumlusu<br>
+    <input type="radio" name="q3" value="w"> Sistem Mühendisi ve Tasarım Sorumlusu<br>
+    <input type="radio" name="q3" value="w"> Sistem Mühendisi ve Konfigürasyon Yönetimi Sorumlusu<br>
+  </div>
+
+  <div class="question">
+    4) Tasarım Sorumlusu süreçte ne sağlar?<br>
+    <input type="radio" name="q4" value="w"> Dokümanların yayımlanması<br>
+    <input type="radio" name="q4" value="w"> Konfigüarsyon planlarının yazılmasını<br>
+    <input type="radio" name="q4" value="w"> Anahatların tanımlanması<br>
+    <input type="radio" name="q4" value="w"> İsimlerdirme ve numaralandırma<br>
+    <input type="radio" name="q4" value="c"> Teknik içeriklerin hazırlanmasını<br>
+  </div>
+
+  <div class="question">
+    5) Ürün hiyerarşik yapısını kim oluşturur?<br>
+    <input type="radio" name="q5" value="c"> Sistem Mühendisi<br>
+    <input type="radio" name="q5" value="w"> Tasarım Sorumlusu<br>
+    <input type="radio" name="q5" value="w"> Konfigürasyon Yönetimi Sorumlusu<br>
+    <input type="radio" name="q5" value="w"> Sistem Mühendisi ve Konfigürasyon Yönetimi Sorumlusu<br>
+    <input type="radio" name="q5" value="w"> Sistem Mühendisi ve Tasarım Sorumlusu<br>
+  </div>
+
+  <div class="question">
+    6) Ürün olgunluk seviyelerini kim tanımlar?<br>
+    <input type="radio" name="q6" value="w"> Sistem Mühendisi ve Konfigürasyon Yönetimi Sorumlusu<br>
+    <input type="radio" name="q6" value="w"> Sistem Mühendisi<br>
+    <input type="radio" name="q6" value="w"> Tasarım Sorumlusu<br>
+    <input type="radio" name="q6" value="c"> Konfigürasyon Yönetimi Sorumlusu<br>
+    <input type="radio" name="q6" value="w"> Sistem Mühendisi ve Konfigürasyon Yönetimi Sorumlusu<br>
+  </div>
+
+  <div class="question">
+    7) Olgunluk geçiş kriterlerini kim netleştirir?<br>
+    <input type="radio" name="q7" value="w"> Konfigürasyon Yönetimi Sorumlusu<br>
+    <input type="radio" name="q7" value="c"> Sistem Mühendisi<br>
+    <input type="radio" name="q7" value="w"> Sistem Mühendisi ve Konfigürasyon Yönetimi Sorumlusu<br>
+    <input type="radio" name="q7" value="w"> Tasarım Sorumlusu<br>
+    <input type="radio" name="q7" value="w"> Konfigürasyon Yönetimi Sormusu ve Tasarım Sorumlusu<br>
+  </div>
+
+  <div class="question">
+    8) Veri paketlerini kim tanımlar?<br>
+    <input type="radio" name="q8" value="w"> Sistem Mühendisi ve Tasarım Sorumlusu<br>
+    <input type="radio" name="q8" value="w"> Sistem Mühendisi<br>
+    <input type="radio" name="q8" value="w"> Tasarım Sorumlusu<br>
+    <input type="radio" name="q8" value="w"> Sistem Mühendisi ve Konfigürasyon Yönetimi Sorumlusu<br>
+    <input type="radio" name="q8" value="c"> Konfigürasyon Yönetimi Sorumlusu<br>
+  </div>
+
+  <div class="question">
+    9) Veri paketlerinin teknik içeriğini kim oluşturur?<br>
+    <input type="radio" name="q9" value="c"> Tasarım Sorumlusu<br>
+    <input type="radio" name="q9" value="w"> Sistem Mühendisi<br>
+    <input type="radio" name="q9" value="w"> Konfigürasyon Yönetimi Sorumlusu<br>
+    <input type="radio" name="q9" value="w"> Sistem Mühendisi ve Tasarım Sorumlusu<br>
+    <input type="radio" name="q9" value="w"> Tasarım Sorumlusu ve Konfigürasyon Yönetimi Sorumlusu
+  </div>
+
+  <div class="question">
+    10) Ürün ağaçlarının resmi yayımlanmasını kim yapar?<br>
+    <input type="radio" name="q10" value="w"> Tasarım Sorumlusu<br>
+    <input type="radio" name="q10" value="w"> Sistem Mühendisi<br>
+    <input type="radio" name="q10" value="c"> Konfigürasyon Yönetimi Sorumlusu<br>
+    <input type="radio" name="q10" value="w"> Sistem Mühendisi ve Tasarım Sorumlusu<br>
+    <input type="radio" name="q10" value="w"> Sistem Mühendesi ve Konfigürasyon Yönetimi Sorumlusu<br>
+  </div>
+
+  <button id="finishBtn" type="button">Testi Bitir</button>
+</form>
+
+<div id="result"></div>
+
+
+<script>
+  document.getElementById("startBtn").addEventListener("click", function() {
+    document.getElementById("textSection").style.display = "none";
+    document.getElementById("testSection").style.display = "block";
+  });
+
+  document.getElementById("finishBtn").addEventListener("click", function() {
+    let correct = 0;
+    const total = 10;
+
+    for (let i = 1; i <= total; i++) {
+      const radios = document.getElementsByName("q" + i);
+      for (const r of radios) {
+        if (r.checked && r.value === "c") correct++;
+      }
+    }
+
+    const wrong = total - correct;
+    const percent = Math.round((correct / total) * 100);
+
+    document.getElementById("result").innerHTML =
+      "Doğru: " + correct + "<br>" +
+      "Yanlış: " + wrong + "<br>" +
+      "Başarı: %" + percent;
+  });
+</script>
+
+</body>
+</html>
